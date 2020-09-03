@@ -10,9 +10,9 @@ const exphbs  = require('express-handlebars');
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 // Routes
-app.get('/greetings/:Bethany', (req, res) => {
-  const name = req.params.Bethany;
-  res.render('greetings', { name });
+app.get('/', (req, res) => {
+  console.log(req.query) // => "{ term: hey" }
+  res.render('home')
   })
 // Start Server
 
